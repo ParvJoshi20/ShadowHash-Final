@@ -304,11 +304,3 @@ app.post('/decrypt_Blowfish', (req, res) => {
 });
 
 
-// Example endpoint to serve an HTML file for testing
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'pages', 'AES_decryption.html'));
-});
-
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});

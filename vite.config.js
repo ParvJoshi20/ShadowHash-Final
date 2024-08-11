@@ -1,13 +1,13 @@
-// vite.config.js
-import { resolve } from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   build: {
+    outDir: 'dist',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-      },
-    },
-  },
-})
+        main: './index.html',
+        about: './public/pages/about-us.html'
+      }
+    }
+  }
+});

@@ -1,8 +1,0 @@
-on: push
-jobs:
-  build-app:
-    runs-on: ubuntu-latest
-    container: node:14
-    steps:
-      -run: npm install
-      -run: npm run dev

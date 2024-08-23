@@ -199,6 +199,7 @@
 
   .about-us:hover {
     opacity: 1;
+    cursor: pointer;
   }
 
   .about-title {
@@ -226,6 +227,7 @@
 
   .terms-of-use:hover {
     opacity: 1;
+    cursor: pointer;
   }
 
   .cover-terms-image {

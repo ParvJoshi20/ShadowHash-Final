@@ -6,13 +6,12 @@ const fs = require('fs').promises;
 const path = require('path');
 
 
-
-const { checkPasswordStrength } = require('./services/password-strength-detector-controller');
-const { generatePassword } = require('./services/random-generator-controller');
-const { scanFile } = require('./services/virus-detection-checker');
-const { encrypt_AES, encrypt_3DES, encrypt_Blowfish } = require('./services/encryption-controller');
-const { compareHash } = require('./services/hash-comparison-controller');
-const { decrypt_AES, decrypt_3DES, decrypt_Blowfish } = require('./services/decryption-controller');
+const { checkPasswordStrength } = require('./password-strength-detector-controller');
+const { generatePassword } = require('./random-generator-controller');
+const { scanFile } = require('./virus-detection-checker');
+const { encrypt_AES, encrypt_3DES, encrypt_Blowfish } = require('./encryption-controller');
+const { compareHash } = require('./hash-comparison-controller');
+const { decrypt_AES, decrypt_3DES, decrypt_Blowfish } = require('./decryption-controller');
 
 const app = express();
 const port = 5500;

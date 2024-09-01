@@ -14,12 +14,13 @@ const { compareHash } = require('./hash-comparison-controller');
 const { decrypt_AES, decrypt_3DES, decrypt_Blowfish } = require('./decryption-controller');
 
 const app = express();
-const port = 5500;
+const port = process.env.PORT || 5500;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(fileUpload());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // Example endpoint to handle MD5 hashing
 app.post('/hash/md5', async (req, res) => {
@@ -303,4 +304,6 @@ app.post('/decrypt_Blowfish', (req, res) => {
     }
 });
 
-
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server is running on http://0.0.0.0:${port}`);
+  });

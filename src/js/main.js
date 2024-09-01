@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const crypto = require('crypto');
 const fs = require('fs').promises;
 const path = require('path');
+const cors = require('cors');
 
 
 const { checkPasswordStrength } = require('./password-strength-detector-controller');
@@ -13,13 +14,16 @@ const { encrypt_AES, encrypt_3DES, encrypt_Blowfish } = require('./encryption-co
 const { compareHash } = require('./hash-comparison-controller');
 const { decrypt_AES, decrypt_3DES, decrypt_Blowfish } = require('./decryption-controller');
 
+
 const app = express();
 const port = process.env.PORT || 5500;
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(fileUpload());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 
 // Example endpoint to handle MD5 hashing

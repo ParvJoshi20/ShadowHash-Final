@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(fileUpload());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
-    origin: 'your-frontend-url', // Replace with your front-end URL
+    origin: 'https://main.dw3q3rlukqs3q.amplifyapp.com/', // Replace with your front-end URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
   }));

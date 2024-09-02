@@ -16,7 +16,7 @@ const { decrypt_AES, decrypt_3DES, decrypt_Blowfish } = require('./decryption-co
 
 
 const app = express();
-const port = process.env.PORT || 5500;
+const port = process.env.PORT || 8000;
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -308,6 +308,6 @@ app.post('/decrypt_Blowfish', (req, res) => {
     }
 });
 
-app.listen(port, '0.0.0.0', () => {
-    console.log(`Server is running on http://0.0.0.0:${port}`);
+app.listen(port, () => {
+    console.log(`Server is running properly`);
   });

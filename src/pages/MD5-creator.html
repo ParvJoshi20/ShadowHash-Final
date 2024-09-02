@@ -64,7 +64,7 @@
             const input = document.getElementById('input').value;
 
             try {
-                const response = await fetch('/hash/md5', {
+                const response = await fetch('http://ec2-13-201-105-70.ap-south-1.compute.amazonaws.com/hash/md5', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

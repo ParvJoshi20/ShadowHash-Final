@@ -2,7 +2,6 @@ const express = require('express');
 const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 const crypto = require('crypto');
-const fs = require('fs').promises;
 const path = require('path');
 const cors = require('cors');
 
@@ -23,7 +22,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(fileUpload());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors());
+app.use(cors({
+    origin: 'your-frontend-url', // Replace with your front-end URL
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
+  
 
 
 // Example endpoint to handle MD5 hashing

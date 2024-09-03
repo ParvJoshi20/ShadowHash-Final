@@ -28,7 +28,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
   }));
 
-  app.use(express.static(path.join(__dirname, 'src')));  
+  app.use(express.static(path.join(__dirname, 'src')));
 
 
 // Example endpoint to handle MD5 hashing

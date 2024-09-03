@@ -27,7 +27,8 @@ app.use(cors({
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
   }));
-  
+
+app.use(express.static(__dirname));  
 
 
 // Example endpoint to handle MD5 hashing
@@ -310,6 +311,10 @@ app.post('/decrypt_Blowfish', (req, res) => {
         console.error('Error decrypting text:', error);
         res.status(500).send('Internal Server Error');
     }
+});
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname,'..', 'index.html'));
 });
 
 app.listen(port, () => {
